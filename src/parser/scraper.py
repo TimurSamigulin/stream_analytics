@@ -141,6 +141,11 @@ class Scrapper():
                                 new_chanels_output_file: Path = None):
         """
             Функция допарсит те страницы которые пропустились во время основного парсинга
+            params:
+            exept_input_file: Path - Файл .txt с сылками на каждой строке с страницами которые не удалось спарсить 
+            chanels_output_file: Path - файл где сохранены спаршенные профили
+            new_chanels_output_file: Path - файл, куда записать объединеный dataframe допаршеных профилей, если не передан,
+                                            то перезапишет chanels_output_file
         """
         if not exept_input_file.is_file():
             return None
